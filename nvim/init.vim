@@ -45,6 +45,7 @@ syntax enable
 colorscheme molokai
 set background=dark
 set number
+set clipboard=unnamed " for forking clipboard with tmux
 set cursorline
 hi CursorLine term=bold cterm=bold guibg=Grey40
 " }}}
