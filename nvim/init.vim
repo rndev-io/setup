@@ -22,7 +22,7 @@ Plug 'terryma/vim-multiple-cursors'
 
 "Plug 'fatih/vim-go'
 "Plug 'zchee/deoplete-go', { 'do': 'make'}
-
+Plug 'sbdchd/neoformat'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 's3rvac/AutoFenc'
@@ -52,6 +52,7 @@ hi CursorLine term=bold cterm=bold guibg=Grey40
 
 " Keys {{{
 let mapleader = ","
+nnoremap K i<CR><Esc>
 " }}}
 
 " XML {{{
