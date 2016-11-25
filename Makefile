@@ -1,4 +1,4 @@
-install: install-tmux install-zsh install-git
+install: install-tmux install-zsh install-git install-nvim
 
 install-tmux:
 	rm -f ~/.tmux.conf
@@ -12,3 +12,7 @@ install-zsh:
 install-git:
 	rm -f ~/.gitconfig
 	ln -s `pwd`/git/gitconfig ~/.gitconfig
+
+install-nvim:
+	rm -f ~/.config/nvim
+	ln -s `pwd`/nvim ~/.config/nvim

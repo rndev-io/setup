@@ -52,12 +52,17 @@ ZSH_CUSTOM=$HOME/.zsh_custom
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-plugins=(extract git-prompt mercurial better-virtualenv osx workenv multirust)
+plugins=(virtualenvwrapper extract git-prompt mercurial osx workenv multirust)
 
 source $ZSH/oh-my-zsh.sh
 
+# === python
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+source /Library/Frameworks/Python.framework/Versions/3.5/bin/virtualenvwrapper.sh
 # User configuration
 
+export XMLLINT_INDENT=$'    '
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
