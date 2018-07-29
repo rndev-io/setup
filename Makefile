@@ -31,3 +31,7 @@ vscode: ## Visual Studio Code -- text editor from Microsoft // https://code.visu
 	@ln -s $(CURDIR)/vscode/keybindings.json ${VSCODE}/keybindings.json
 	@ln -s $(CURDIR)/vscode/locale.json ${VSCODE}/locale.json
 	@ln -s $(CURDIR)/vscode/settings.json ${VSCODE}/settings.json
+
+hugo: brew ## Hugo is a static site generator // https://gohugo.io/
+	@command -v code > /dev/null || brew install hugo
+	
