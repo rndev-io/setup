@@ -1,5 +1,7 @@
 # dotfiles
 
-## install
+My dotfiles && programs. OS X only.
 
-`make install`
+## Install
+
+Just run `make install`.

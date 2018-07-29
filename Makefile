@@ -1,18 +1,33 @@
-install: install-tmux install-zsh install-git install-nvim
+install: brew fish tmux git unar vscode
 
-install-tmux:
-	rm -f ~/.tmux.conf
-	ln -s `pwd`/tmux/tmux.conf ~/.tmux.conf
+.PHONY : vscode
 
-install-zsh:
-	rm -f ~/.zshrc ~/.zsh_custom
-	ln -s `pwd`/zsh/zshrc ~/.zshrc
-	ln -s `pwd`/zsh/zsh_custom ~/.zsh_custom
 
-install-git:
-	rm -f ~/.gitconfig
-	ln -s `pwd`/git/gitconfig ~/.gitconfig
+brew:  ## The missing package manager for macOS // https://brew.sh/index_ru
+	@command -v brew > /dev/null || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-install-nvim:
-	rm -f ~/.config/nvim
-	ln -s `pwd`/nvim ~/.config/nvim
+fish: brew  ## Fish is a smart and user-friendly command line shell // https://fishshell.com/
+	@command -v fish > /dev/null || brew install fish
+	@rm -r $(HOME)/.config/fish
+	@ln -s $(CURDIR)/fish $(HOME)/.config/fish
+
+tmux: brew ## Tmux is a terminal multiplexer // https://github.com/tmux/tmux
+	@command -v tmux > /dev/null || brew install tmux
+	@rm -f $(HOME)/.tmux.conf
+	@ln -s $(CURDIR)/tmux/tmux.conf $(HOME)/.tmux.conf
+
+git: brew ## Git is a free and open source distributed version control system  // https://git-scm.com/
+	@command -v git > /dev/null || brew install git
+	@rm -f $(HOME)/.gitconfig
+	@ln -s $(CURDIR)/git/gitconfig $(HOME)/.gitconfig
+
+unar: brew ## The Unarchiver command line tools // https://theunarchiver.com/command-line
+	@command -v unar > /dev/null || brew install unar
+
+VSCODE = "$(HOME)/Library/Application Support/Code/User"
+vscode: ## Visual Studio Code -- text editor from Microsoft // https://code.visualstudio.com/docs/setup/mac
+	@command -v code > /dev/null || echo "---> Install vscode manually, https://code.visualstudio.com/docs/setup/mac"
+	@rm -f ${VSCODE}/keybindings.json ${VSCODE}/locale.json ${VSCODE}/settings.json
+	@ln -s $(CURDIR)/vscode/keybindings.json ${VSCODE}/keybindings.json
+	@ln -s $(CURDIR)/vscode/locale.json ${VSCODE}/locale.json
+	@ln -s $(CURDIR)/vscode/settings.json ${VSCODE}/settings.json

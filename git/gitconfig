@@ -1,5 +1,5 @@
 [user]
-	name = Ruslan Nassonov
-	email = rusnassonov@gmail.com
-[alias]
-	permission-reset = !git diff -p -R --no-color | grep -E \"^(diff|(old|new) mode)\" --color=never | git apply
+	name = Ruslan Nasonov
+	email = rus.nasonov@gmail.com
+[core]
+	autocrlf = false

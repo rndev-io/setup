@@ -1,0 +1,10 @@
+// Поместите параметры в этот файл, чтобы перезаписать параметры по умолчанию.
+{
+    "lldb.executable": "/Users/perseus/bin/my_lldb",
+    "files.autoSave": "afterDelay",
+    "python.linting.enabledWithoutWorkspace": false,
+    "window.zoomLevel": 0,
+    "python.pythonPath": "/usr/local/bin/python3.6",
+    "git.autofetch": true,
+    "editor.multiCursorModifier": "alt"
+}
