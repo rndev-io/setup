@@ -1,0 +1,1 @@
+/Users/perseus/.config/fisherman/pwd_info/pwd_info.fish
