@@ -1,10 +1,14 @@
-install: brew fish tmux git unar vscode
+install: brew fish tmux git unar vscode fisher
 
 .PHONY : vscode
 
 
 brew:  ## The missing package manager for macOS // https://brew.sh/index_ru
 	@command -v brew > /dev/null || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+fisher: fish
+	@curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
+	@command fisher
 
 fish: brew  ## Fish is a smart and user-friendly command line shell // https://fishshell.com/
 	@command -v fish > /dev/null || brew install fish

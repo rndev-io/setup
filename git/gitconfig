@@ -1,5 +1,8 @@
-[user]
+ [user]
 	name = Ruslan Nasonov
-	email = perseus@yandex-team.ru
 [core]
 	autocrlf = false
+[includeIf "gitdir:~/Projects/yandex/"]
+	path = ~/Projects/yandex/.gitconfig
+[includeIf "gitdir:~/Projects/private/"]
+	path = ~/Projects/private/.gitconfig
