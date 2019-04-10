@@ -3,6 +3,10 @@ tap bbatsche/fisher
 
 brew "fish"
 brew "fisherman"
+brew "hugo"
+brew "git"
+brew "tmux"
+brew "unar"
 
 cask "visual-studio-code"
 cask "vlc"

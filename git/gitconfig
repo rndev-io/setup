@@ -1,6 +1,5 @@
 [user]
 	name = Ruslan Nasonov
-	email = rus.nasonov@gmail.com
 [core]
 	autocrlf = false
 [includeIf "gitdir:~/Projects/yandex/"]
