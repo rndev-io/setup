@@ -9,8 +9,9 @@ fish: brew
 	@ln -s $(CURDIR)/fish $(HOME)/.config/fish
 
 tmux: brew
-	@rm -f $(HOME)/.tmux.conf
-	@ln -s $(CURDIR)/tmux/tmux.conf $(HOME)/.tmux.conf
+	@rm -f $(HOME)/.tmux.conf $(HOME)/.tmux.conf.local
+	@ln -s -f $(CURDIR)/tmux/tmux.conf $(HOME)/.tmux.conf
+	@ln -s -f $(CURDIR)/tmux/tmux.conf.local $(HOME)/.tmux.conf.local
 
 git: brew
 	@rm -f $(HOME)/.gitconfig
