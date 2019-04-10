@@ -7,6 +7,7 @@ brew "hugo"
 brew "git"
 brew "tmux"
 brew "unar"
+brew "reattach-to-user-namespace"
 
 cask "visual-studio-code"
 cask "vlc"
