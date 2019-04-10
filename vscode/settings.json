@@ -1,10 +1,153 @@
-// Поместите параметры в этот файл, чтобы перезаписать параметры по умолчанию.
 {
     "lldb.executable": "/Users/perseus/bin/my_lldb",
     "files.autoSave": "afterDelay",
-    "python.linting.enabledWithoutWorkspace": false,
+   
     "window.zoomLevel": 0,
-    "python.pythonPath": "/usr/local/bin/python3.6",
+    
     "git.autofetch": true,
-    "editor.multiCursorModifier": "alt"
+    "editor.multiCursorModifier": "ctrlCmd",
+    
+    "python.unitTest.unittestEnabled": false,
+    "python.unitTest.pyTestEnabled": true,
+    "python.unitTest.nosetestsEnabled": false,
+    "python.jediEnabled": false,
+    "python.pythonPath": "/usr/local/bin/python3.7",
+    "python.linting.pylintEnabled": true,
+    "python.unitTest.pyTestArgs": [
+        "-vv",
+        "--tb=native"
+    ],
+    
+    "go.useLanguageServer": true,
+    "go.autocompleteUnimportedPackages": true,
+    "go.testTimeout": "600s",
+    "go.testFlags": [
+        "-v"
+    ],
+    "workbench.statusBar.feedback.visible": false,
+    "workbench.colorTheme": "Monokai",
+
+    "editor.fontFamily": "FiraCode-Retina",
+    "editor.fontLigatures": true,
+
+    "editor.fontWeight": "500", // Light
+
+    
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "name": "Heading",
+                "scope": "markup.heading",
+                "settings": {
+                    "fontStyle": "",
+                    "foreground": "#00FF00"
+                }
+            },
+            {
+                "name": "Bold",
+                "scope": "markup.bold.yandex.wiki",
+                "settings": {
+                    "fontStyle": "bold",
+                    "foreground": "#f92672"
+                }
+            },
+            {
+                "name": "Italic",
+                "scope": "markup.italic.yandex.wiki",
+                "settings": {
+                    "fontStyle": "italic",
+                    "foreground": "#e42e70"
+                }
+            },
+            {
+                "name": "Underline",
+                "scope": "markup.underline.yandex.wiki",
+                "settings": {
+                    "fontStyle": "underline",
+                    "foreground": "#e42e70"
+                }
+            },
+            {
+                "name": "Question",
+                "scope": "markup.yandex.wiki.question",
+                "settings": {
+                    "fontStyle": "italic",
+                    "foreground": "#ff0000"
+                }
+            },
+            {
+                "name": "Link URL",
+                "scope": "markup.underline.link.yandex.wiki",
+                "settings": {
+                    "fontStyle": "",
+                    "foreground": "#999"
+                }
+            },
+            {
+                "name": "Link Text",
+                "scope": "markup.underline.text.yandex.wiki",
+                "settings": {
+                    "fontStyle": "",
+                    "foreground": "#e6db74ff"
+                }
+            },
+            {
+                "name": "Quote",
+                "scope": "markup.quote.yandex.wiki",
+                "settings": {
+                    "foreground": "#800000"
+                }
+            },
+            {
+                "name": "Remark green",
+                "scope": "markup.yandex.wiki.remark.green",
+                "settings": {
+                    "foreground": "#00ff00"
+                }
+            },
+            {
+                "name": "Remark red",
+                "scope": "markup.yandex.wiki.remark.red",
+                "settings": {
+                    "foreground": "#ff0000"
+                }
+            },
+            {
+                "name": "Remark blue",
+                "scope": "markup.yandex.wiki.remark.blue",
+                "settings": {
+                    "foreground": "#04b"
+                }
+            },
+            {
+                "name": "Remark gray",
+                "scope": "markup.yandex.wiki.remark.gray",
+                "settings": {
+                    "foreground": "#808080"
+                }
+            },
+            {
+                "name": "Remark yellow",
+                "scope": "markup.yandex.wiki.remark.yellow",
+                "settings": {
+                    "foreground": "#FFFF00"
+                }
+            },
+            {
+                "name": "Code block",
+                "scope": "markup.inline.raw.string, punctuation.definition.yandex.wiki",
+                "settings": {
+                    "foreground": "#fd971fff"
+                }
+            },
+            {
+                "name": "Custom",
+                "scope": "markup.italic.yandex.qqq",
+                "settings": {
+                    "fontStyle": "italic",
+                    "foreground": "#e42e70"
+                }
+            }
+        ]
+    }
 }

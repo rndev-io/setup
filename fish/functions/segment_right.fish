@@ -1,1 +1,0 @@
-/Users/perseus/.config/fisherman/segment/segment_right.fish

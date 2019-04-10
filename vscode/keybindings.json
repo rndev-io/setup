@@ -1,4 +1,3 @@
-// Place your key bindings in this file to overwrite the defaults
 [
     {
         "key": "cmd+r",
@@ -10,7 +9,42 @@
     },
     {
         "key": "cmd+1",
+        "when": "!explorerViewletVisible",
         "command": "workbench.view.explorer"
+    },
+    {
+        "key": "cmd+1",
+        "when": "explorerViewletVisible && explorerViewletFocus",
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "cmd+1",
+        "when": "explorerViewletVisible && !explorerViewletFocus",
+        "command": "workbench.view.explorer"
+    },
+    {
+        "key": "escape", 
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "activeViewlet == 'workbench.view.explorer'"
+    },
+    {
+        "key": "enter",
+        "command": "-renameFile",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "key": "enter",
+        "command": "list.select",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "key": "cmd+b",
+        "command": "-workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "cmd+b",
+        "command": "-markdown.extension.editing.toggleBold",
+        "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'"
     },
     {
         "key": "shift+cmd+e",
@@ -27,11 +61,6 @@
     {
         "key": "cmd+b",
         "command": "-workbench.action.toggleSidebarVisibility"
-    },
-    {
-        "key": "cmd+b",
-        "command": "-markdown.extension.editing.toggleBold",
-        "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'"
     },
     {
         "key": "cmd+b",
@@ -76,7 +105,6 @@
         "command": "workbench.action.quickOpenNavigateNextInFilePicker",
         "when": "inFilesPicker && inQuickOpen"
     },
-    
     {
         "key": "cmd+p",
         "command": "-workbench.action.quickOpenNavigateNextInFilePicker",
