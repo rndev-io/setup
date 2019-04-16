@@ -18,9 +18,12 @@ git: brew
 	@ln -s $(CURDIR)/git/gitconfig $(HOME)/.gitconfig
 
 VSCODE = "$(HOME)/Library/Application Support/Code/User"
-vscode: brew ## Visual Studio Code -- text editor from Microsoft // https://code.visualstudio.com/docs/setup/mac
+vscode: brew
 	@rm -f ${VSCODE}/keybindings.json ${VSCODE}/locale.json ${VSCODE}/settings.json
 	@ln -s $(CURDIR)/vscode/keybindings.json ${VSCODE}/keybindings.json
 	@ln -s $(CURDIR)/vscode/locale.json ${VSCODE}/locale.json
 	@ln -s $(CURDIR)/vscode/settings.json ${VSCODE}/settings.json
 
+alacritty: brew
+	@rm -f $(HOME)/.config/alacritty/alacritty.yml
+	@ln -sf $(CURDIR)/alacritty/alacritty.yml $(HOME)/.config/alacritty/alacritty.yml

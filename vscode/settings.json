@@ -153,5 +153,6 @@
     "terminal.integrated.rendererType": "dom",
     "workbench.editor.showTabs": false,
     "editor.minimap.enabled": false,
-    "breadcrumbs.enabled": true
+    "breadcrumbs.enabled": true,
+    "cSpell.language": ",ru"
 }

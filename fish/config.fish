@@ -8,3 +8,5 @@ ssh-add -K
 
 alias ls="ls -lah"
 alias e="nvim"
+
+start_tmux
