@@ -11,6 +11,7 @@ brew "reattach-to-user-namespace"
 brew "httpie"
 brew "neovim"
 brew "node"
+brew "youtube-dl"
 
 cask "visual-studio-code"
 cask "vlc"

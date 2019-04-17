@@ -80,37 +80,16 @@ tabspaces: 8
 font:
   # Normal (roman) font face
   normal:
-    # Font family
-    #
-    # Default:
-    #   - (macOS) Menlo
-    #   - (Linux) monospace
-    #   - (Windows) Consolas
-    family: Fira Code
+    family: "Fira Code"
+    style: Retina
 
-    # The `style` can be specified to pick a specific face.
-    #style: Regular
-
-  # Bold font face
   bold:
-    # Font family
-    #
-    # If the bold family is not specified, it will fall back to the
-    # value specified for the normal font.
     family: Fira Code
-
-    # The `style` can be specified to pick a specific face.
-    #style: Bold
+    style: Bold
 
   # Italic font face
   italic:
-    # Font family
-    #
-    # If the italic family is not specified, it will fall back to the
-    # value specified for the normal font.
     family: Fira Code
-
-    # The `style` can be specified to pick a specific face.
     #style: Italic
 
   # Point size
@@ -158,8 +137,15 @@ draw_bold_text_with_bright_colors: true
 colors:
   # Default colors
   primary:
-    background: '0x000000'
+    background: '0x191919'
     foreground: '0xeaeaea'
+
+  cursor:
+    text:   '0xf1c1c1'
+    cursor: '0xff2600'
+  # primary:
+  #   background: '0x000000'
+  #   foreground: '0xeaeaea'
 
     # Bright and dim foreground colors
     #
@@ -283,7 +269,7 @@ mouse:
   triple_click: { threshold: 300 }
 
   # If this is `true`, the cursor is temporarily hidden when typing.
-  hide_when_typing: false
+  hide_when_typing: true
 
   url:
     # URL launcher
@@ -321,7 +307,7 @@ cursor:
   #   - ▇ Block
   #   - _ Underline
   #   - | Beam
-  style: Block
+  style: Underline
 
   # If this is `true`, the cursor will be rendered as a hollow box when the
   # window is not focused.
@@ -339,9 +325,9 @@ live_config_reload: true
 #   - (Linux/macOS) /bin/bash --login
 #   - (Windows) powershell
 shell:
- program: /usr/local/bin/fish
-#  args:
-#    - --login
+ program: /usr/local/bin/tmux
+ args:
+   - -u
 
 # Windows 10 ConPTY backend (Windows only)
 #
