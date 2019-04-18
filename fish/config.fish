@@ -7,6 +7,4 @@ add_to_path /usr/local/bin
 ssh-add -K
 
 alias ls="ls -lah"
-alias e="nvim"
-
-start_tmux
+alias e="micro"
