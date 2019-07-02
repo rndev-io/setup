@@ -7,4 +7,6 @@ add_to_path /usr/local/bin
 ssh-add -K
 
 alias ls="ls -lah"
-alias e="micro"
+alias e="nvim"
+	
+status --is-interactive; and . (jump shell | psub)

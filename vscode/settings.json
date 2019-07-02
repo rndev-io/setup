@@ -1,24 +1,19 @@
 {
     "lldb.executable": "/Users/perseus/bin/my_lldb",
     "files.autoSave": "afterDelay",
-   
     "window.zoomLevel": 0,
-    
     "git.autofetch": true,
     "editor.multiCursorModifier": "ctrlCmd",
-    
-    "python.unitTest.unittestEnabled": false,
-    "python.unitTest.pyTestEnabled": true,
-    "python.unitTest.nosetestsEnabled": false,
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "python.testing.nosetestsEnabled": false,
     "python.jediEnabled": false,
     "python.pythonPath": "/usr/local/bin/python3.7",
     "python.linting.pylintEnabled": true,
-    "python.unitTest.pyTestArgs": [
+    "python.testing.pytestArgs": [
         "-vv",
         "--tb=native"
     ],
-    
-    "go.useLanguageServer": true,
     "go.autocompleteUnimportedPackages": true,
     "go.testTimeout": "600s",
     "go.testFlags": [
@@ -26,13 +21,9 @@
     ],
     "workbench.statusBar.feedback.visible": false,
     "workbench.colorTheme": "Monokai",
-
     "editor.fontFamily": "FiraCode-Retina",
     "editor.fontLigatures": true,
-
     "editor.fontWeight": "500", // Light
-
-    
     "editor.tokenColorCustomizations": {
         "textMateRules": [
             {
@@ -154,5 +145,28 @@
     "workbench.editor.showTabs": false,
     "editor.minimap.enabled": false,
     "breadcrumbs.enabled": true,
-    "cSpell.language": ",ru"
+    "[markdown]": {
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": true
+    },
+    "projectManager.vscode.baseFolders": [
+        "/Users/perseus/Projects/private"
+    ],
+    "projectManager.any.maxDepthRecursion": 1,
+    "projectManager.git.maxDepthRecursion": 1,
+    "gitlens.views.repositories.files.layout": "tree",
+    "editor.detectIndentation": false,
+    "cSpell.language": ",ru",
+    "vscode-yandex-tracker.query": "\"Queue\": \"BCL\"",
+    "go.buildOnSave": "off",
+    "go.formatTool": "gofmt",
+    "editor.formatOnSave": true,
+    "vscode-yandex-tracker.organizationId": "2719817",
+    "vscode-yandex-tracker.host": "https://st-api.test.yandex-team.ru",
+    "python.autoComplete.extraPaths": [
+        "./balalayka"
+    ],
+    "files.autoSaveDelay": 5000,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "svn.enableProposedApi": "none"
 }

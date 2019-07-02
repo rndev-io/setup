@@ -23,7 +23,7 @@
         "command": "workbench.view.explorer"
     },
     {
-        "key": "escape", 
+        "key": "escape",
         "command": "workbench.action.focusActiveEditorGroup",
         "when": "activeViewlet == 'workbench.view.explorer'"
     },
@@ -63,17 +63,12 @@
         "command": "-workbench.action.toggleSidebarVisibility"
     },
     {
-        "key": "cmd+b",
-        "command": "editor.action.goToDeclaration",
-        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
-    },
-    {
         "key": "f12",
         "command": "-editor.action.goToDeclaration",
         "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
     },
     {
-        "key": "alt+cmd+left",
+        "key": "shift+cmd+left",
         "command": "workbench.action.navigateBack"
     },
     {
@@ -81,7 +76,7 @@
         "command": "-workbench.action.navigateBack"
     },
     {
-        "key": "alt+cmd+right",
+        "key": "shift+cmd+right",
         "command": "workbench.action.navigateForward"
     },
     {
@@ -109,5 +104,48 @@
         "key": "cmd+p",
         "command": "-workbench.action.quickOpenNavigateNextInFilePicker",
         "when": "inFilesPicker && inQuickOpen"
+    },
+    {
+        "key": "shift+cmd+left",
+        "command": "-cursorHomeSelect",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "shift+cmd+right",
+        "command": "-cursorEndSelect",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "shift+cmd+d",
+        "command": "-workbench.view.debug"
+    },
+    {
+        "key": "cmd+o",
+        "command": "-workbench.action.showAllSymbols"
+    },
+    {
+        "key": "shift+cmd+d",
+        "command": "editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
+    {
+        "key": "f12",
+        "command": "-editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
+    {
+        "key": "alt+f8",
+        "command": "-editor.action.marker.next",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+cmd+e",
+        "command": "editor.action.marker.next",
+        "when": "editorFocus && !editorReadonly"
+    },
+    {
+        "key": "f2",
+        "command": "-editor.action.marker.next",
+        "when": "editorFocus && !editorReadonly"
     }
 ]
