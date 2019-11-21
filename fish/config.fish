@@ -8,5 +8,16 @@ ssh-add -K
 
 alias ls="ls -lah"
 alias e="nvim"
-	
+
+add_to_path $HOME/.cargo/bin
+
 status --is-interactive; and . (jump shell | psub)
+
+if not functions -q fisher
+    set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
+    curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
+    fish -c fisher
+end
+
+function fish_user_key_bindings
+end

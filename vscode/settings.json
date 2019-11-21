@@ -1,7 +1,5 @@
 {
-    "lldb.executable": "/Users/perseus/bin/my_lldb",
-    "files.autoSave": "afterDelay",
-    "window.zoomLevel": 0,
+    "window.zoomLevel": 1,
     "git.autofetch": true,
     "editor.multiCursorModifier": "ctrlCmd",
     "python.testing.unittestEnabled": false,
@@ -15,7 +13,10 @@
         "--tb=native"
     ],
     "go.autocompleteUnimportedPackages": true,
+    "go.goroot": "/usr/local/go",
     "go.testTimeout": "600s",
+    "go.useLanguageServer": true,
+    "go.languageServerFlags": [],
     "go.testFlags": [
         "-v"
     ],
@@ -144,7 +145,7 @@
     "terminal.integrated.rendererType": "dom",
     "workbench.editor.showTabs": false,
     "editor.minimap.enabled": false,
-    "breadcrumbs.enabled": true,
+    "breadcrumbs.enabled": false,
     "[markdown]": {
         "editor.wordWrap": "on",
         "editor.quickSuggestions": true
@@ -163,10 +164,28 @@
     "editor.formatOnSave": true,
     "vscode-yandex-tracker.organizationId": "2719817",
     "vscode-yandex-tracker.host": "https://st-api.test.yandex-team.ru",
-    "python.autoComplete.extraPaths": [
-        "./balalayka"
-    ],
-    "files.autoSaveDelay": 5000,
     "typescript.updateImportsOnFileMove.enabled": "always",
-    "svn.enableProposedApi": "none"
+    "files.autoSave": "afterDelay",
+    "git.ignoreLegacyWarning": true,
+    "extensions.autoUpdate": true,
+    "svn.enableProposedApi": "product",
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "dart.flutterSdkPath": "/Users/perseus/Downloads/flutter",
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[sql]": {
+        "editor.defaultFormatter": "adpyke.vscode-sql-formatter"
+    },
+    "python.autoComplete.extraPaths": [],
+    "vscode-yandex-arc.enableLog": true,
+    "rust.mode": null,
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    }
 }

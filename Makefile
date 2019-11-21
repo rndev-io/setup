@@ -24,18 +24,10 @@ vscode: brew
 	@ln -s $(CURDIR)/vscode/locale.json ${VSCODE}/locale.json
 	@ln -s $(CURDIR)/vscode/settings.json ${VSCODE}/settings.json
 
-alacritty: brew
-	@rm -f $(HOME)/.config/alacritty/alacritty.yml
-	@ln -sf $(CURDIR)/alacritty/alacritty.yml $(HOME)/.config/alacritty/alacritty.yml
-
-
-micro: brew
-	@rm -rf $(HOME)/.config/micro/bindings.json
-	@rm -rf $(HOME)/.config/micro/settings.json
-
-	@ln -sf $(CURDIR)/micro/bindings.json $(HOME)/.config/micro/bindings.json
-	@ln -sf $(CURDIR)/micro/settings.json $(HOME)/.config/micro/settings.json
-
 karabiner: brew
 	@rm -f $(HOME)/.config/karabiner/karabiner.json
 	@ln -sf $(CURDIR)/karabiner/karabiner.json $(HOME)/.config/karabiner/karabiner.json
+
+rust:
+	@rm -r $(HOME)/.cargo/.crates.toml
+	@ln -s $(CURDIR)/rust/crates.toml $(HOME)/.cargo/.crates.toml

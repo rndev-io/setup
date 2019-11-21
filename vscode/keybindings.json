@@ -147,5 +147,14 @@
         "key": "f2",
         "command": "-editor.action.marker.next",
         "when": "editorFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+b",
+        "command": "markdown.extension.editing.toggleBold"
+    },
+    {
+        "key": "ctrl+b",
+        "command": "-cursorLeft",
+        "when": "textInputFocus"
     }
 ]

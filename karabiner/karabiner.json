@@ -15,43 +15,6 @@
                 },
                 "rules": [
                     {
-                        "description": "Double left shift to ctrl+e Alacritty (micro)",
-                        "manipulators": [
-                            {   
-                                "conditions": [
-                                    {
-                                        "name": "left_shift pressed",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    },
-                                    {
-                                        "bundle_identifiers": [
-                                            "^io\\.alacritty$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "left_shift",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "e",
-                                        "modifiers": [
-                                            "left_control"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]   
-                    },
-                    {
                         "description": "Double left shift to ctrl+shift+p VSCode",
                         "manipulators": [
                             {
