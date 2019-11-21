@@ -21,3 +21,4 @@ Just run `make install`.
 [Tmux](https://github.com/tmux/tmux) - Tmux is a terminal multiplexer.
 
 [Git](https://git-scm.com/) - is a free and open source distributed version control system.
+
