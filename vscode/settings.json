@@ -13,7 +13,6 @@
         "--tb=native"
     ],
     "go.autocompleteUnimportedPackages": true,
-    "go.goroot": "/usr/local/go",
     "go.testTimeout": "600s",
     "go.useLanguageServer": true,
     "go.languageServerFlags": [],

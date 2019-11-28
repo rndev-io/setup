@@ -1,6 +1,7 @@
 [user]
 	name = rusnasonov
 	email = rusnasonov@users.noreply.github.com
+	signingkey = B8E27A14
 [core]
 	autocrlf = false
 [includeIf "gitdir:~/Projects/yandex/"]
@@ -9,3 +10,7 @@
 	path = ~/Projects/private/.gitconfig
 [includeIf "gitdir:~/Projects/external/"]
 	path = ~/Projects/private/.gitconfig
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true

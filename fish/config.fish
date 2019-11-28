@@ -10,6 +10,7 @@ alias ls="ls -lah"
 alias e="nvim"
 
 add_to_path $HOME/.cargo/bin
+add_to_path $HOME/go/bin
 
 status --is-interactive; and . (jump shell | psub)
 
