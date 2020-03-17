@@ -1,4 +1,4 @@
-install: brew fish tmux git vscode
+install: brew fish tmux git vscode editorconfig alacritty
 
 
 brew:
@@ -29,5 +29,14 @@ karabiner: brew
 	@ln -sf $(CURDIR)/karabiner/karabiner.json $(HOME)/.config/karabiner/karabiner.json
 
 rust:
-	@rm -r $(HOME)/.cargo/.crates.toml
+	@rm -f $(HOME)/.cargo/.crates.toml
 	@ln -s $(CURDIR)/rust/crates.toml $(HOME)/.cargo/.crates.toml
+
+editorconfig:
+	@rm -f $(HOME)/.editorconfig
+	@ln -s $(CURDIR)/.editorconfig $(HOME)/.editorconfig
+
+
+alacritty: brew
+	@rm -f $(HOME)/.config/alacritty/alacritty.yml
+	@ln -s $(CURDIR)/alacritty/alacritty.yml $(HOME)/.config/alacritty/alacritty.yml

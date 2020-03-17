@@ -182,9 +182,13 @@
         "editor.defaultFormatter": "adpyke.vscode-sql-formatter"
     },
     "python.autoComplete.extraPaths": [],
-    "vscode-yandex-arc.enableLog": true,
-    "rust.mode": null,
     "[jsonc]": {
         "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "scm.defaultViewMode": "tree",
+    "git.decorations.enabled": false,
+    "editor.maxTokenizationLineLength": 200000,
+    "[yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
     }
 }

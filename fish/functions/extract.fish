@@ -24,7 +24,9 @@ function extract --description "Expand or extract bundled & compressed files"
         unar $argv[1]
       else
         echo "\"unar\" not install, fix it: brew install unar"
-      end   
+      end
+    case alfredworkflow
+      tar -xf $argv[1]
     case '*'
       echo "unknown extension"
   end
