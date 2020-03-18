@@ -1,4 +1,4 @@
-install: brew fish tmux git vscode editorconfig alacritty
+install: brew fish tmux git vscode editorconfig alacritty karabiner
 
 
 brew:
