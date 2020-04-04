@@ -1,8 +1,8 @@
-if not set -q TMUX
-    set -g TMUX tmux new-session -d -s base
-    eval $TMUX
-    tmux -u attach-session -d -t base
-end
+#if not set -q TMUX
+#    set -g TMUX tmux new-session -d -s base
+#    eval $TMUX
+#    tmux -u attach-session -d -t base
+#end
 
 set -x EDITOR nvim
 set -x LANG en_US.UTF-8

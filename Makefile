@@ -19,10 +19,11 @@ git: brew
 
 VSCODE = "$(HOME)/Library/Application Support/Code/User"
 vscode: brew
-	@rm -f ${VSCODE}/keybindings.json ${VSCODE}/locale.json ${VSCODE}/settings.json
+	@rm -f ${VSCODE}/keybindings.json ${VSCODE}/locale.json ${VSCODE}/settings.json ${VSCODE}/snippets/rusnasonov.code-snippets
 	@ln -s $(CURDIR)/vscode/keybindings.json ${VSCODE}/keybindings.json
 	@ln -s $(CURDIR)/vscode/locale.json ${VSCODE}/locale.json
 	@ln -s $(CURDIR)/vscode/settings.json ${VSCODE}/settings.json
+	@ln -s $(CURDIR)/vscode/rusnasonov.code-snippets ${VSCODE}/snippets/rusnasonov.code-snippets
 
 karabiner: brew
 	@rm -f $(HOME)/.config/karabiner/karabiner.json

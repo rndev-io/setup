@@ -19,7 +19,6 @@
     "go.testFlags": [
         "-v"
     ],
-    "workbench.statusBar.feedback.visible": false,
     "workbench.colorTheme": "Monokai",
     "editor.fontFamily": "FiraCode-Retina",
     "editor.fontLigatures": true,
@@ -149,14 +148,8 @@
         "editor.wordWrap": "on",
         "editor.quickSuggestions": true
     },
-    "projectManager.vscode.baseFolders": [
-        "/Users/perseus/Projects/private"
-    ],
-    "projectManager.any.maxDepthRecursion": 1,
-    "projectManager.git.maxDepthRecursion": 1,
     "gitlens.views.repositories.files.layout": "tree",
     "editor.detectIndentation": false,
-    "cSpell.language": ",ru",
     "vscode-yandex-tracker.query": "\"Queue\": \"BCL\"",
     "go.buildOnSave": "off",
     "go.formatTool": "gofmt",
@@ -167,7 +160,6 @@
     "files.autoSave": "afterDelay",
     "git.ignoreLegacyWarning": true,
     "extensions.autoUpdate": true,
-    "svn.enableProposedApi": "product",
     "[typescript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
@@ -190,5 +182,11 @@
     "editor.maxTokenizationLineLength": 200000,
     "[yaml]": {
         "editor.defaultFormatter": "redhat.vscode-yaml"
-    }
+    },
+    "vscode-yandex-arc.updateChannel": "prestable",
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "code-runner.enableAppInsights": false,
+    "gitlens.advanced.telemetry.enabled": false,
+    "githubPullRequests.telemetry.enabled": false
 }
