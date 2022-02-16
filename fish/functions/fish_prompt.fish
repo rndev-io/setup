@@ -15,9 +15,9 @@ set __fish_git_prompt_color_upstream_behind red
 function fish_prompt
     set_color yellow
     echo -n (prompt_pwd)
-    if type -q arc-prompt
-        echo -n (arc-prompt)
-    end
+    #if type -q arc-prompt
+    #    echo -n (arc-prompt)
+    #end
     echo -n (__fish_git_prompt)
     set_color normal
     echo '> '

@@ -27,5 +27,20 @@
     "TODO": {
         "prefix": "todo",
         "body": "$LINE_COMMENT $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE TODO: $1"
+    },
+    "Test": {
+        "prefix": "test",
+        "scope": "go",
+        "body": [
+            "func Test$1(t *testing.T){",
+            "    tests := []struct{",
+            "    input $2",
+            "    expected $3",
+            "  }{",
+            "       {$4}",
+            "  }",
+            "}"
+        ],
+        "description": "Test function"
     }
 }

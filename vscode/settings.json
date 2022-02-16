@@ -2,11 +2,11 @@
     "window.zoomLevel": 1,
     "git.autofetch": true,
     "editor.multiCursorModifier": "ctrlCmd",
+    "python.testing.promptToConfigure": false,
+    "python.testing.pytestEnabled": false,
     "python.testing.unittestEnabled": false,
-    "python.testing.pytestEnabled": true,
     "python.testing.nosetestsEnabled": false,
-    "python.jediEnabled": false,
-    "python.pythonPath": "/usr/local/bin/python3.7",
+    "python.pythonPath": "/usr/local/bin/python3",
     "python.linting.pylintEnabled": true,
     "python.testing.pytestArgs": [
         "-vv",
@@ -16,10 +16,7 @@
     "go.testTimeout": "600s",
     "go.useLanguageServer": true,
     "go.languageServerFlags": [],
-    "go.testFlags": [
-        "-v"
-    ],
-    "workbench.colorTheme": "Monokai",
+    "workbench.colorTheme": "Complete Dark",
     "editor.fontFamily": "FiraCode-Retina",
     "editor.fontLigatures": true,
     "editor.fontWeight": "500", // Light
@@ -143,21 +140,23 @@
     "terminal.integrated.rendererType": "dom",
     "workbench.editor.showTabs": false,
     "editor.minimap.enabled": false,
-    "breadcrumbs.enabled": false,
     "[markdown]": {
         "editor.wordWrap": "on",
         "editor.quickSuggestions": true
     },
+    "python.formatting.provider": "black",
+    "python.formatting.blackPath": "/usr/local/bin/black",
     "gitlens.views.repositories.files.layout": "tree",
     "editor.detectIndentation": false,
-    "vscode-yandex-tracker.query": "\"Queue\": \"BCL\"",
+    "vscode-yandex-tracker.query": "\"Queue\": \"YANDEXPAY\"",
     "go.buildOnSave": "off",
     "go.formatTool": "gofmt",
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "vscode-yandex-tracker.organizationId": "2719817",
-    "vscode-yandex-tracker.host": "https://st-api.test.yandex-team.ru",
+    "vscode-yandex-tracker.host": "https://st-api.yandex-team.ru",
     "typescript.updateImportsOnFileMove.enabled": "always",
     "files.autoSave": "afterDelay",
+    "files.trimTrailingWhitespace": true,
     "git.ignoreLegacyWarning": true,
     "extensions.autoUpdate": true,
     "[typescript]": {
@@ -171,7 +170,7 @@
         "editor.defaultFormatter": "vscode.html-language-features"
     },
     "[sql]": {
-        "editor.defaultFormatter": "adpyke.vscode-sql-formatter"
+        "editor.defaultFormatter": "bradymholt.pgformatter"
     },
     "python.autoComplete.extraPaths": [],
     "[jsonc]": {
@@ -183,10 +182,74 @@
     "[yaml]": {
         "editor.defaultFormatter": "redhat.vscode-yaml"
     },
-    "vscode-yandex-arc.updateChannel": "prestable",
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
     "code-runner.enableAppInsights": false,
     "gitlens.advanced.telemetry.enabled": false,
-    "githubPullRequests.telemetry.enabled": false
+    "githubPullRequests.telemetry.enabled": false,
+    "python.languageServer": "Pylance",
+    "vscode-yandex-arc.enableLog": true,
+    "python.analysis.extraPaths": [],
+    "python.showStartPage": false,
+    "vscode-yandex-arc.gutterDiffTarget": "HEAD",
+    "go.testFlags": [
+        "-v"
+    ],
+    "vscode-yandex-arc.enableAutoupdate": true,
+    "explorer.confirmDragAndDrop": false,
+    "mssql.connections": [
+        {
+            "server": "{{put-server-name-here}}",
+            "database": "{{put-database-name-here}}",
+            "user": "{{put-username-here}}",
+            "password": ""
+        }
+    ],
+    "workbench.editor.decorations.colors": true,
+    "workbench.editor.decorations.badges": true,
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/*.code-search": true,
+        "**/*.pyc": true,
+    },
+    "search.mode": "newEditor",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "typescript.tsserver.log": "verbose",
+    "typescript.tsserver.trace": "verbose",
+    "[vue]": {
+        "editor.defaultFormatter": "octref.vetur"
+    },
+    "go.toolsManagement.autoUpdate": true,
+    "python.linting.pylintPath": "/usr/local/bin/pylint",
+    "vscode-yandex-arc.updateChannel": "stable",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "redhat.telemetry.enabled": false,
+    "editor.rulers": [
+        120
+    ],
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "explorer.confirmDelete": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "numberedBookmarks.navigateThroughAllFiles": "replace",
+    "python.linting.flake8Enabled": true,
+    "python.testing.autoTestDiscoverOnSaveEnabled": false,
+    "go.testExplorer.enable": false,
+    "editor.unicodeHighlight.ambiguousCharacters": false
 }
