@@ -12,12 +12,9 @@
         "-vv",
         "--tb=native"
     ],
-    "go.autocompleteUnimportedPackages": true,
     "go.testTimeout": "600s",
     "go.useLanguageServer": true,
-    "go.languageServerFlags": [],
-    "workbench.colorTheme": "Complete Dark",
-    "editor.fontFamily": "FiraCode-Retina",
+    "editor.fontFamily": "FiraCodeNerdFontComplete-Retina",
     "editor.fontLigatures": true,
     "editor.fontWeight": "500", // Light
     "editor.tokenColorCustomizations": {
@@ -142,10 +139,15 @@
     "editor.minimap.enabled": false,
     "[markdown]": {
         "editor.wordWrap": "on",
-        "editor.quickSuggestions": true
+        "editor.quickSuggestions": {
+            "comments": "on",
+            "strings": "on",
+            "other": "on"
+        },
+        "editor.defaultFormatter": "darkriszty.markdown-table-prettify"
     },
     "python.formatting.provider": "black",
-    "python.formatting.blackPath": "/usr/local/bin/black",
+    "python.formatting.blackPath": "/opt/homebrew/bin/black",
     "gitlens.views.repositories.files.layout": "tree",
     "editor.detectIndentation": false,
     "vscode-yandex-tracker.query": "\"Queue\": \"YANDEXPAY\"",
@@ -244,12 +246,14 @@
     },
     "explorer.confirmDelete": false,
     "security.workspace.trust.untrustedFiles": "open",
-    "[cpp]": {
-        "editor.defaultFormatter": "ms-vscode.cpptools"
-    },
     "numberedBookmarks.navigateThroughAllFiles": "replace",
     "python.linting.flake8Enabled": true,
     "python.testing.autoTestDiscoverOnSaveEnabled": false,
     "go.testExplorer.enable": false,
-    "editor.unicodeHighlight.ambiguousCharacters": false
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "workbench.colorTheme": "Monokai",
+    "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
+    "gopls": {
+        "build.expandWorkspaceToModule": false
+    }
 }

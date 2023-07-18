@@ -1,10 +1,5 @@
 [user]
 	name = Ruslan Nasonov
 	email = rus.nasonov@gmail.com
-	signingkey = B8E27A14
 [core]
 	autocrlf = false
-[commit]
-	gpgsign = true
-[tag]
-	gpgsign = true

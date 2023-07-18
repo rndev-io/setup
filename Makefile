@@ -5,7 +5,7 @@ brew:
 	@command -v brew > /dev/null || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 fish: brew
-	@rm -r $(HOME)/.config/fish
+	@rm -rf $(HOME)/.config/fish
 	@ln -s $(CURDIR)/fish $(HOME)/.config/fish
 
 tmux: brew
@@ -25,9 +25,9 @@ vscode: brew
 	@ln -s $(CURDIR)/vscode/settings.json ${VSCODE}/settings.json
 	@ln -s $(CURDIR)/vscode/rusnasonov.code-snippets ${VSCODE}/snippets/rusnasonov.code-snippets
 
-karabiner: brew
-	@rm -f $(HOME)/.config/karabiner/karabiner.json
-	@ln -sf $(CURDIR)/karabiner/karabiner.json $(HOME)/.config/karabiner/karabiner.json
+#karabiner: brew
+#	@rm -f $(HOME)/.config/karabiner/karabiner.#json
+#	@ln -sf $(CURDIR)/karabiner/karabiner.json $(HOME)/.config/karabiner/karabiner.json
 
 rust:
 	@rm -f $(HOME)/.cargo/.crates.toml
@@ -39,5 +39,5 @@ editorconfig:
 
 
 alacritty: brew
-	@rm -f $(HOME)/.config/alacritty/alacritty.yml
+	@rm -rf $(HOME)/.config/alacritty/alacritty.yml
 	@ln -s $(CURDIR)/alacritty/alacritty.yml $(HOME)/.config/alacritty/alacritty.yml
