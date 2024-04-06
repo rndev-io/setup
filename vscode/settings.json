@@ -135,7 +135,7 @@
         ]
     },
     "terminal.integrated.rendererType": "dom",
-    "workbench.editor.showTabs": false,
+    "workbench.editor.showTabs": "single",
     "editor.minimap.enabled": false,
     "[markdown]": {
         "editor.wordWrap": "on",

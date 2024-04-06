@@ -6,6 +6,7 @@ function M.yandex_project_path()
     local projects = {
         "billing/yandex_pay_plus",
         "pay/lib",
+        "pay/cashback",
         "billing/yandex_pay",
         "billing/yandex_pay_admin"
     }
@@ -54,6 +55,18 @@ function vim.getVisualSelection()
 	else
 		return ''
 	end
+end
+
+function M.nvim_create_augroups(definitions)
+    for group_name, definition in pairs(definitions) do
+        vim.api.nvim_command('augroup '..group_name)
+        vim.api.nvim_command('autocmd!')
+        for _, def in ipairs(definition) do
+            local command = table.concat(vim.tbl_flatten{'autocmd', def}, ' ')
+            vim.api.nvim_command(command)
+        end
+        vim.api.nvim_command('augroup END')
+    end
 end
 
 return M

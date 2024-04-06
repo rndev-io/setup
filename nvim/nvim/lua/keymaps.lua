@@ -23,6 +23,7 @@ map('n', '<up>', ':wincmd k<CR>', default_opts)
 map('n', '<down>', ':wincmd j<CR>', default_opts)
 map('n', '<left>', ':wincmd h<CR>', default_opts)
 map('n', '<right>', ':wincmd l<CR>', default_opts)
+
 -- map('n', '<M-2>', ':2wincmd w<CR>', default_opts)
 -- map('n', '<M-3>', ':3wincmd w<CR>', default_opts)
 -- map('n', '<M-4>', ':4wincmd w<CR>', default_opts)
@@ -74,10 +75,10 @@ set('n', '<leader>zb', telekasten.show_backlinks)
 set('n', '<leader>z', telekasten.panel)
 
 -- harpoon
-set('n', "<leader>a", function() require("harpoon.mark").add_file() end)
-set('n', "<C-e>", function() require("harpoon.ui").toggle_quick_menu() end)
-set('n', "<C-j>", function() require("harpoon.ui").nav_prev() end)                  -- navigates to next mark
-set('n', "<C-;>", function() require("harpoon.ui").nav_next() end)                   -- navigates to next mark
+-- set('n', "<leader>a", function() require("harpoon.mark").add_file() end)
+-- set('n', "<C-e>", function() require("harpoon.ui").toggle_quick_menu() end)
+-- set('n', "<C-j>", function() require("harpoon.ui").nav_prev() end)                  -- navigates to next mark
+-- set('n', "<C-;>", function() require("harpoon.ui").nav_next() end)                   -- navigates to next mark
 -- set('n', '<M-1>', function() require("harpoon.ui").nav_file(1) end)
 -- set('n', '<M-2>', function() require("harpoon.ui").nav_file(2) end)
 -- set('n', '<M-3>', function() require("harpoon.ui").nav_file(3) end)

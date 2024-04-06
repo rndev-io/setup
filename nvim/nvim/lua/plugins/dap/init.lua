@@ -3,7 +3,7 @@ local M = {}
 local function configure()
     local dap_breakpoint = {
         error = {
-            text = "🟥",
+            text = "🔴",
             texthl = "LspDiagnosticsSignError",
             linehl = "",
             numhl = "",
@@ -15,7 +15,7 @@ local function configure()
             numhl = "",
         },
         stopped = {
-            text = "⭐️",
+            text = "ᐅ",
             texthl = "LspDiagnosticsSignInformation",
             linehl = "DiagnosticUnderlineInfo",
             numhl = "LspDiagnosticsSignInformation",
@@ -47,6 +47,7 @@ end
 
 local function configure_debuggers()
     require("plugins.dap.python").setup()
+    require("plugins.dap.go").setup()
 end
 
 function M.setup()

@@ -10,8 +10,15 @@ function M.setup()
     local keymap = {
         d = {
             name = "Debug",
-            T = { "<cmd>lua require'dap-python'.test_method()<cr>", "Run closest method above cursor" },
+            T = { function()
+                if vim.bo.filetype == "python" then
+                    require('dap-python').test_method()
+                elseif vim.bo.filetype == "go" then
+                    require('dap-go').debug_test()
+                end
+            end, "Run closest method above cursor" },
             R = { "<cmd>lua require'dap'.run_to_cursor()<cr>", "Run to Cursor" },
+            rr = { "<cmd>lua require'dap'.run()<cr>", "Run" },
             E = { "<cmd>lua require'dapui'.eval(vim.fn.input '[Expression] > ')<cr>", "Evaluate Input" },
             C = { "<cmd>lua require'dap'.set_breakpoint(vim.fn.input '[Condition] > ')<cr>", "Conditional Breakpoint" },
             U = { "<cmd>lua require'dapui'.toggle()<cr>", "Toggle UI" },

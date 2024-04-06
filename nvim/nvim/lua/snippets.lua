@@ -79,4 +79,10 @@ ls.add_snippets("all", {
         t(" @perseus "),
         i(0),
     }),
+    s("note", {
+        t("# NOTE: "),
+        f(function() return os.date("%Y-%m-%d") end),
+        t(" @perseus "),
+        i(0),
+    }),
 })

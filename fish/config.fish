@@ -1,7 +1,8 @@
 set -x EDITOR nvim
 set -x LANG en_US.UTF-8
 set -x LC_CTYPE en_US.UTF-8
-
+set -x DYLD_LIBRARY_PATH (brew --prefix)/lib
+set -x LIBRARY_PATH (brew --prefix)/lib
 #####################
 # Add pyenv executable to PATH by running
 # the following interactively:
@@ -24,6 +25,8 @@ add_to_path $HOME/bin
 add_to_path $HOME/.local/bin
 add_to_path $HOME/yandex-cloud/bin
 
+
+alias ycs3='aws s3 --endpoint-url=https://storage.yandexcloud.net'
 alias ls="ls -lahUtr"
 alias e="nvim"
 alias rgf='rg --files | rg'
@@ -49,6 +52,6 @@ alias urlencode 'python -c "import sys, urllib as ul; print(ul.quote(sys.argv[1]
 
 function postexec_noti --on-event fish_postexec
   if set -q CMD_DURATION; and test $CMD_DURATION -gt 3000
-    noti -t (status current-command) -m "Duration: "(math $CMD_DURATION / 1000)"sec"
+    noti -t (status current-command) -m "$argv: "(math $CMD_DURATION / 1000)"sec"
   end
 end

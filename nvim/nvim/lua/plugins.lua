@@ -5,11 +5,15 @@ require('plugins.comment')
 require('plugins.gitsigns')
 require('plugins.telescope')
 require('plugins.which-key')
+require('plugins.harpoon')
 
 return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
+    use { "nvim-neotest/nvim-nio" }
     use 'joshdick/onedark.vim'
-    use 'marko-cerovac/material.nvim'
+    use 'folke/tokyonight.nvim'
+    -- use 'marko-cerovac/material.nvim'
+    -- use 'andrewradev/linediff.vim'
     use { "williamboman/mason.nvim", config = function()
         require("mason").setup()
     end }
@@ -47,16 +51,27 @@ return require('packer').startup(function()
     -- Замена fzf и ack
     use {
         'nvim-telescope/telescope.nvim',
-        requires = 'nvim-lua/plenary.nvim',
+        requires = {
+            'nvim-lua/plenary.nvim',
+            'nvim-telescope/telescope-live-grep-args.nvim',
+        },
+        config = function()
+            require("telescope").load_extension("live_grep_args")
+        end
     }
     use {
         "nvim-telescope/telescope-file-browser.nvim",
         requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
     }
     use { "folke/which-key.nvim" }
-    use { 'ThePrimeagen/harpoon', config = function()
-        require("harpoon").setup()
-    end }
+    -- use { 'ThePrimeagen/harpoon', config = function()
+    --     require("harpoon").setup()
+    -- end }
+    use {
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        requires = { "nvim-lua/plenary.nvim" }
+    }
     -----------------------------------------------------------
     -- LSP и автодополнялка
     -----------------------------------------------------------
@@ -64,19 +79,9 @@ return require('packer').startup(function()
         'ray-x/go.nvim'
     }
     use {
-      "ray-x/lsp_signature.nvim",
+        "ray-x/lsp_signature.nvim",
     }
-    use { 'jose-elias-alvarez/null-ls.nvim', config = function()
-        local null_ls = require('null-ls')
-
-        null_ls.setup({
-            sources = {
-                null_ls.builtins.diagnostics.flake8,
-                null_ls.builtins.diagnostics.mypy,
-                null_ls.builtins.completion.spell,
-            },
-        })
-    end }
+    use { 'nvimtools/none-ls.nvim', requires = { "nvimtools/none-ls-extras.nvim" } }
 
     use {
         "mfussenegger/nvim-dap",
@@ -91,12 +96,6 @@ return require('packer').startup(function()
             "nvim-telescope/telescope-dap.nvim",
             { "leoluz/nvim-dap-go", module = "dap-go" },
             { "jbyuki/one-small-step-for-vimkind", module = "osv" },
-            { "mxsdev/nvim-dap-vscode-js", module = { "dap-vscode-js" } },
-            {
-              "microsoft/vscode-js-debug",
-              opt = true,
-              run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out"
-            },
         },
         config = function()
             require("plugins.dap").setup()
@@ -104,6 +103,17 @@ return require('packer').startup(function()
     }
 
     -- Highlight, edit, and navigate code using a fast incremental parsing library
+    use {
+        "Exafunction/codeium.nvim",
+        requires = {
+            "nvim-lua/plenary.nvim",
+            "hrsh7th/nvim-cmp",
+        },
+        config = function()
+            require("codeium").setup({
+            })
+        end
+    }
     use 'nvim-treesitter/nvim-treesitter'
     use "nvim-treesitter/nvim-treesitter-textobjects"
     use {
@@ -115,9 +125,10 @@ return require('packer').startup(function()
     use 'neovim/nvim-lspconfig'
     -- use 'williamboman/nvim-lsp-installer'
     -- Автодополнялка
-    use {'hrsh7th/nvim-cmp'}
+    use { 'hrsh7th/nvim-cmp' }
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-cmdline'
+    use 'onsails/lspkind-nvim'
     -- use 'hrsh7th/cmp-buffer'
 
     use 'L3MON4D3/LuaSnip'
@@ -148,7 +159,6 @@ return require('packer').startup(function()
     -- Даже если включена русская раскладка vim команды будут работать
     --use 'powerman/vim-plugin-ruscmd'
     use "Pocco81/auto-save.nvim"
-    use "wincent/ferret"
     use {
         "nvim-neotest/neotest",
         requires = {
@@ -161,13 +171,13 @@ return require('packer').startup(function()
         config = function()
             local neotest_ns = vim.api.nvim_create_namespace("neotest")
             vim.diagnostic.config({
-              virtual_text = {
-                format = function(diagnostic)
-                  local message =
-                    diagnostic.message:gsub("\n", " "):gsub("\t", " "):gsub("%s+", " "):gsub("^%s+", "")
-                  return message
-                end,
-              },
+                virtual_text = {
+                    format = function(diagnostic)
+                        local message =
+                        diagnostic.message:gsub("\n", " "):gsub("\t", " "):gsub("%s+", " "):gsub("^%s+", "")
+                        return message
+                    end,
+                },
             }, neotest_ns)
         end,
     }
