@@ -1,0 +1,33 @@
+return {}
+-- function _G.set_terminal_keymaps()
+--     local opts = { buffer = 0 }
+--     local set = vim.keymap.set
+--
+--     set('t', '<esc>', [[<C-\><C-n>]], opts)
+--
+--     set('t', '<C-k>', '<Cmd>wincmd k<CR>')
+--     set('t', '<C-l>', '<Cmd>wincmd j<CR>')
+--     set('t', '<C-j>', '<Cmd>wincmd h<CR>')
+--     set('t', '<C-;>', '<Cmd>wincmd l<CR>')
+-- end
+--
+-- vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
+--
+-- return {
+--     'akinsho/toggleterm.nvim',
+--     version = "*",
+--     config = function()
+--         require("toggleterm").setup({
+--             direction = "horizontal",
+--             size = 15,
+--             open_mapping = [[<M-j>]],
+--             on_create = function(t)
+--                 vim.fn.chansend(
+--                     t.job_id,
+--                     'set -e Y_PYTHON_ENTRY_POINT Y_PYTHON_SOURCE_ROOT\n'
+--                 )
+--             end
+--         })
+--     end
+--
+-- }

@@ -1,6 +1,6 @@
 local M = {}
 
-local utils = require('utils')
+local utils = require('custom.utils')
 
 function M.setup(_)
     local dap_python = require('dap-python')

@@ -14,33 +14,9 @@ local c = ls.choice_node
 local r = ls.restore_node
 local sn = ls.snippet_node
 
-local urandom = assert(io.open("/dev/urandom", "rb"))
-
-ls.config.set_config {
-  -- This tells LuaSnip to remember to keep around the last snippet.
-  -- You can jump back into it even if you move outside of the selection
-  history = true,
-
-  -- This one is cool cause if you have dynamic snippets, it updates as you type!
-  updateevents = "TextChanged,TextChangedI",
-
-  -- Autosnippets:
-  enable_autosnippets = true,
-
-  -- Crazy highlights!!
-  -- #vid3
-  -- ext_opts = nil,
-  ext_opts = {
-    [types.choiceNode] = {
-      active = {
-        virt_text = { { " <- Current Choice", "NonTest" } },
-      },
-    },
-  },
-}
-
 
 local function uuid4()
+    local urandom = assert(io.open("/dev/urandom", "rb"))
     local block = urandom:read(16)
     return string.format("%02x%02x%02x%02x-%02x%02x-%02x%02x-%02x%02x-%02x%02x%02x%02x%02x%02x",
         block:byte(1), block:byte(2), block:byte(3), block:byte(4), block:byte(5), block:byte(6),
@@ -60,13 +36,36 @@ ls.add_snippets("python", {
                 async def handle(self) -> None:
                     return None
         ]],
-        {
-            i(1, "module"),
-            i(2, "ActionClass"),
-            i(3, "ClassName"),
-            rep(2)
-        }))
+            {
+                i(1, "module"),
+                i(2, "ActionClass"),
+                i(3, "ClassName"),
+                rep(2)
+            }))
     }),
+    s("pay_test_file", {
+        unpack(fmt([[
+            import pytest
+            from hamcrest import anything, assert_that, equal_to, match_equality
+
+            @pytest.mark.asyncio
+            async def test_{}():
+                pass
+        ]],
+            {
+                i(1, 'some_test_name'),
+            }))
+    }),
+    s("pay_test", {
+        unpack(fmt([[
+            @pytest.mark.asyncio
+            async def test_{}():
+                pass
+        ]],
+            {
+                i(1, 'some_test_name'),
+            }))
+    })
 })
 
 ls.add_snippets("all", {

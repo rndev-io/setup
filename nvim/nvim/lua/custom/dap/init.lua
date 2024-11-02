@@ -46,15 +46,15 @@ local function configure_exts()
 end
 
 local function configure_debuggers()
-    require("plugins.dap.python").setup()
-    require("plugins.dap.go").setup()
+    require("custom.dap.python").setup()
+    require("custom.dap.go").setup()
 end
 
 function M.setup()
     configure() -- Configuration
     configure_exts() -- Extensions
     configure_debuggers() -- Debugger
-    require("plugins.dap.keymaps").setup() -- Keymaps
+    require("custom.dap.keymaps").setup() -- Keymaps
 end
 
 configure_debuggers()

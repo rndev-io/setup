@@ -19,8 +19,10 @@ pyenv init - | source
 # Restart your shell for the changes to take effect.
 #################
 
+set -x GOBIN $HOME/go/bin
+
 add_to_path $HOME/.cargo/bin
-add_to_path $HOME/go/bin
+add_to_path $GOBIN
 add_to_path $HOME/bin
 add_to_path $HOME/.local/bin
 add_to_path $HOME/yandex-cloud/bin
