@@ -11,7 +11,6 @@ local Path = require("plenary.path")
 local HOME = Path:new(os.getenv("HOME"))
 local ARCADIA = Path:new(os.getenv("ARCADIA"))
 
-
 opt.cursorline = true
 opt.showtabline = 0
 
@@ -35,6 +34,7 @@ opt.expandtab = true
 opt.so = 999
 opt.autoread = true
 g.onedark_termcolors = 256
+
 cmd([[colorscheme tokyonight-night]])
 
 
@@ -48,7 +48,8 @@ api.nvim_create_autocmd("WinEnter", {
 })
 
 
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
+-- local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local capabilities = require('blink.cmp').get_lsp_capabilities()
 
 vim.diagnostic.config({
     virtual_text = {
@@ -212,13 +213,13 @@ local function get_python_extra_path()
         ARCADIA:joinpath('contrib/python/Babel'),
         ARCADIA:joinpath('contrib/python/XlsxWriter/py3'),
         ARCADIA:joinpath('contrib/python/aiohttp-cors'),
+        ARCADIA:joinpath('contrib/python/aiohttp'),
         ARCADIA:joinpath('contrib/deprecated/python/aiosocksy'),
         ARCADIA:joinpath('contrib/python/aiozipkin'),
         ARCADIA:joinpath('contrib/python/yarl'),
         ARCADIA:joinpath('contrib/python/inflection/py3'),
         ARCADIA:joinpath('contrib/python/transitions'),
         ARCADIA:joinpath('contrib/python/uvloop'),
-        ARCADIA:joinpath('contrib/python/uvloo'),
         ARCADIA:joinpath('contrib/python/Jinja2'),
         ARCADIA:joinpath('contrib/python/xhtml2pdf'),
         ARCADIA:joinpath('contrib/python/pytest/py3'),
@@ -254,6 +255,8 @@ local function get_python_extra_path()
     end
     return extraPaths
 end
+
+vim.lsp.set_log_level("debug")
 
 require('lspconfig').pyright.setup {
     on_attach = on_attach,
@@ -367,12 +370,14 @@ null_ls.setup({
     on_attach = on_attach,
 })
 
-if utils.is_arcadia_repo() then
-    require("sg").setup {
-        -- Pass your own custom attach function
-        --    If you do not pass your own attach function, then the following maps are provide:
-        --        - gd -> goto definition
-        --        - gr -> goto references
-        on_attach = on_attach
-    }
-end
+-- if not utils.is_arcadia_repo() then
+--     require("sg").setup {
+--         -- Pass your own custom attach function
+--         --    If you do not pass your own attach function, then the following maps are provide:
+--         --        - gd -> goto definition
+--         --        - gr -> goto references
+--         on_attach = on_attach
+--     }
+-- end
+--
+--

@@ -3,13 +3,22 @@ return {
     config = function()
         local lualine = require("lualine")
         local navic = require("nvim-navic")
-
+        local ok, yandex_statusline = pcall(require, "yandex.statusline")
+        local arc_branch = { function() return "" end }
+        if ok then
+            arc_branch = {
+                function() return yandex_statusline.get_branch() end,
+                icon = '',
+                cond = yandex_statusline
+                    .is_arcadia
+            }
+        end
         lualine.setup({
             options = { theme = 'tokyonight' },
             winbar = {
-                lualine_a = { function ()
-                    return [[ ]]
-                end},
+                lualine_a = { function()
+                    return " "
+                end },
                 lualine_c = {
                     {
                         function()
@@ -22,6 +31,12 @@ return {
                 }
             },
             sections = {
+                lualine_b = {
+                    'branch',
+                    arc_branch,
+                    'diff',
+                    'diagnostics'
+                },
                 lualine_c = {
                     {
                         "filename",

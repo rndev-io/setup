@@ -17,9 +17,11 @@ return {
                 end,
                 desc = "Find File"
             },
-            { 'fg', function() require('telescope').extensions.live_grep_args.live_grep_args() end,                       desc = "Live Grep" },
+            -- { 'fg', function() require('telescope').extensions.live_grep_args.live_grep_args() end,                       desc = "Live Grep" },
             { 'fw', function() require('telescope-live-grep-args.shortcuts').grep_word_under_cursor() end,                desc = "Live Grep Word Under Cursor" },
             { 'fs', function() require('telescope-live-grep-args.shortcuts').grep_word_under_cursor_current_buffer() end, desc = "Live Grep Word Under Cursor in Current Buffer" },
+            { 'fm', function() require('telescope.builtin').marks() end,                                                  desc = "Find Marks" },
+            { 'fh', function() require('telescope.builtin').help_tags() end,                                                  desc = "Find Help" },
             {
                 'fo',
                 function()
@@ -39,9 +41,6 @@ return {
                 'fg',
                 function()
                     require('telescope-live-grep-args.shortcuts').grep_visual_selection()
-                    -- local text = vim.getVisualSelection()
-                    -- require('telescope').extensions.live_grep_args.live_grep_args({ default_text = text })
-                    -- require("telescope.builtin").live_grep({ default_text = text })
                 end,
                 desc = "Grep Word"
             },
@@ -49,11 +48,6 @@ return {
                 'ff',
                 function()
                     local text = vim.getVisualSelection()
-                    -- local buff_name = vim.api.nvim_buf_get_name(0)
-                    -- if buff_name:find("toggleterm#") then
-                    --     -- go to top buffer
-                    --     vim.cmd('wincmd k')
-                    -- end
                     require('telescope.builtin').find_files({ default_text = text })
                 end,
                 desc = "Find File"
@@ -82,16 +76,16 @@ return {
         wk.add({
             -- Utils Group
             { "<leader>u",  group = "utils" },
-            { "<leader>uc", "<cmd>TextCaseOpenTelescope<CR>",                  desc = "Text Case", mode = { "n", "v" } },
+            { "<leader>uc", "<cmd>TextCaseOpenTelescope<CR>", desc = "Text Case", mode = { "n", "v" } },
 
             -- Merge Group
             { "<leader>m",  group = "merge" },
-            { "<leader>mr", "<cmd>diffget _REMOTE<CR>",                        desc = "Remote" },
-            { "<leader>ml", "<cmd>diffget _LOCAL<CR>",                         desc = "Local" },
+            { "<leader>mr", "<cmd>diffget _REMOTE<CR>",       desc = "Remote" },
+            { "<leader>ml", "<cmd>diffget _LOCAL<CR>",        desc = "Local" },
 
-            -- Harpoon Group
-            { "<leader>h",  group = "harpoon" },
-            { "<leader>ha", function() require("harpoon.mark").add_file() end, desc = "Add" },
+            -- -- Harpoon Group
+            -- { "<leader>h",  group = "harpoon" },
+            -- { "<leader>ha", function() require("harpoon.mark").add_file() end, desc = "Add" },
         })
     end
 }

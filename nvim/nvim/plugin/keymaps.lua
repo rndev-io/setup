@@ -5,15 +5,12 @@ local set = vim.keymap.set
 vim.g.mapleader = ','
 
 
--- map('n', '<esc>', ':noh<return><esc>', default_opts)  -- clear search highlight by pressing esc
-
-
 -- map('v', '<C-r>', 'hy:%s/<C-r>h//gc<left><left><left>', default_opts) -- replace selected text
 
-map('', ';', 'l', default_opts)
-map('', 'l', 'j', default_opts)
-map('', 'k', 'k', default_opts)
-map('', 'j', 'h', default_opts)
+-- map('', ';', 'l', default_opts)
+-- map('', 'l', 'j', default_opts)
+-- map('', 'k', 'k', default_opts)
+-- map('', 'j', 'h', default_opts)
 
 -- ## split movements
 
@@ -22,10 +19,20 @@ map('', 'j', 'h', default_opts)
 -- map('', '<left>', ':echoe "Use j"<CR>', default_opts)
 -- map('', '<right>', ':echoe "Use ;"<CR>', default_opts)
 
-map('n', '<C-k>', '<Cmd>wincmd k<CR>', default_opts)
-map('n', '<C-l>', '<Cmd>wincmd j<CR>', default_opts)
-map('n', '<C-j>', '<Cmd>wincmd h<CR>', default_opts)
-map('n', '<C-;>', '<Cmd>wincmd l<CR>', default_opts)
+-- map('n', '<C-k>', '<Cmd>wincmd k<CR>', default_opts)
+-- map('n', '<C-l>', '<Cmd>wincmd j<CR>', default_opts)
+-- map('n', '<C-j>', '<Cmd>wincmd h<CR>', default_opts)
+-- map('n', '<C-;>', '<Cmd>wincmd l<CR>', default_opts)
+
+-- map('n', '<C-k>', '<Cmd>wincmd k<CR>', default_opts)
+-- map('n', '<C-j>', '<Cmd>wincmd j<CR>', default_opts)
+-- map('n', '<C-h>', '<Cmd>wincmd h<CR>', default_opts)
+-- map('n', '<C-l>', '<Cmd>wincmd l<CR>', default_opts)
+
+-- set("n", "<c-j>", "<c-w><c-j>")
+-- set("n", "<c-k>", "<c-w><c-k>")
+-- set("n", "<c-l>", "<c-w><c-l>")
+-- set("n", "<c-h>", "<c-w><c-h>")
 
 map("v", "<", "<gv", default_opts)
 map("v", ">", ">gv", default_opts)
@@ -59,23 +66,20 @@ set('n', '<leader>c', function() require('telescope.builtin').commands() end, de
 -- map('n', 'fs', [[<cmd>lua require('telescope.builtin').lsp_dynamic_workspace_symbols()<cr>]], default_opts)
 
 --- nvim-tree
-vim.api.nvim_set_keymap(
-    "n",
-    "tt",
-    ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
-    { noremap = true }
-)
+-- vim.api.nvim_set_keymap(
+--     "n",
+--     "tt",
+--     ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
+--     { noremap = true }
+-- )
 
 -- clipboard
 map("v", "<leader>y", '"+y', default_opts)
 map("v", "<leader>p", '"+p', default_opts)
 
--- twilight
-map("n", "tw", ":Twilight<CR>", default_opts)
-
 -- luasnip
-local luasnip = require('luasnip')
-local cmp = require("cmp")
+-- local luasnip = require('luasnip')
+-- local cmp = require("cmp")
 
 local t = function(str)
     return vim.api.nvim_replace_termcodes(str, true, true, true)
@@ -128,6 +132,11 @@ set('v', 'gas', function() require('textcase').current_word('to_snake_case') end
 -- quickfix
 set('n', '<C-n>', [[<cmd>cnf<cr>]], { desc = 'Next item in quickfix' })
 set('n', '<C-p>', [[<cmd>cpf<cr>]], { desc = 'Previous item in quickfix' })
+
+-- rub lua
+set('n', '<space><space>x', '<cmd>source %<CR>')
+set('n', '<space>x', ':.lua<CR>')
+set('v', '<space>x', ':lua<CR>')
 
 -- windows.nvim
 -- local function cmd(command)
